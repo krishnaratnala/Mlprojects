@@ -1,25 +1,6 @@
 import os
 import sys
-import logging
-from datetime import datetime
-
-# Create logs directory if it doesn't exist
-LOG_DIR = "logs"
-os.makedirs(LOG_DIR, exist_ok=True)
-
-# Define log file path
-LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
-LOG_FILE_PATH = os.path.join(LOG_DIR, LOG_FILE)
-
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.FileHandler(LOG_FILE_PATH),  # Log to file
-        logging.StreamHandler(sys.stdout)    # Log to console
-    ]
-)
+from src.logger import logging
 
 def error_message_detail(error, error_detail: sys):
     _, _, exc_tb = sys.exc_info()
