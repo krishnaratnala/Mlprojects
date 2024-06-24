@@ -23,7 +23,7 @@ class DataIngestion:
             df = pd.read_csv("notebook/data/stud.csv")
             logging.info("Reading the dataset as dataframe")
             
-            # Ensure the directories for both raw data and train/test data exist
+            # Ensure the directories for both raw data and train/test data exist 
             os.makedirs(os.path.dirname(self.Ingestion_config.raw_data_path), exist_ok=True)
             os.makedirs(os.path.dirname(self.Ingestion_config.train_data_path), exist_ok=True)
             
